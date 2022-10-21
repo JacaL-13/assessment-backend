@@ -1,14 +1,15 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express')
+const cors = require('cors')
 
-const app = express();
+const app = express()
 
-app.use(cors());
+app.use(cors())
 
-app.use(express.json());
+app.use(express.json())
 
-const { getCompliment } = require('./controller')
+const { getCompliment, getFortune } = require('./controller')
 
-app.get("/api/compliment", getCompliment);
+app.get('/api/compliment', getCompliment)
+app.get('/api/fortune/:type', getFortune)
 
-app.listen(4000, () => console.log("Server running on 4000"));
+app.listen(4000, () => console.log('Server running on 4000'))

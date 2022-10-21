@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Back End Assessment</title>
-  </head>
-  <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Back End Assessment</title>
+		<meta name="description" content="Assessment, fortune teller" />
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body class="container">
+		<section>
+      <button id="complimentButton">Get a compliment</button>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
-    
-  </body>
+      <form id="fortuneForm">
+        <label for="fortuneType">Fortune Type:</label>
+        <select name="fortuneType" id="fortuneType" >
+          <option value="default">Any</option>
+          <option value="future">Future</option>
+          <option value="advice">Advice</option>
+        </select>
+        <input type="submit" id="fortuneButton" value="Get a fortune"></input>
+      </form>
+      
+  </section>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>title</title>
+	</head>
+	<body></body>
 </html>
