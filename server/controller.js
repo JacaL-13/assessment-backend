@@ -1,5 +1,20 @@
 const fortunes = require('./fortune.json')
 
+const savedFortunes = [
+    { id: 9990, text: 'Test1' },
+    { id: 9991, text: 'Test2' }
+]
+
+function moveArrElem(array, moveIdx, movement) {
+    let movingVal = array.splice(moveIdx, 1)[0]
+	array.splice(+moveIdx + +movement, 0, movingVal)
+	return array
+}
+
+let move = 0
+// test
+// moveArrElem(savedFortunes, 1, -1)
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -20,8 +35,29 @@ module.exports = {
             res.status(200).send(randomFortune)
         }
     },
-    getFortuneTypes: (req,res) => {
+    getAllFortunes: (req, res) => {
+        res.status(200).send(savedFortunes)
+    },
+    saveFortune: (req, res) => {
+        savedFortunes.push(req.body)
+        res.status(200).send()
+    },
+    moveFortune: (req, res) => {
+        if (req.body.movement === '↓') {
+            move = 1
+        } else {
+            move = -1
+        }
+        moveArrElem(savedFortunes, req.body.id, move)
+        move = 0
+        res.status(200).send()
+    },
+    getFortuneTypes: (req, res) => {
+        res.status(200).send()
+    },
+    tieFortune: (req, res) => {
+        console.log(req.query.id)
+        savedFortunes.splice(req.query.id, 1)
         res.status(200).send()
     }
-
 }
