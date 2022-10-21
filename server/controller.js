@@ -1,9 +1,6 @@
 const fortunes = require('./fortune.json')
 
-const savedFortunes = [
-    { id: 9990, text: 'Test1' },
-    { id: 9991, text: 'Test2' }
-]
+const savedFortunes = []
 
 function moveArrElem(array, moveIdx, movement) {
     let movingVal = array.splice(moveIdx, 1)[0]
