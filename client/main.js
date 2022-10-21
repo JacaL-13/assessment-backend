@@ -52,7 +52,7 @@ function getFortune(event) {
     event.preventDefault()
 
     if (currFortuneObj !== undefined) {
-        alert('You already have a fortune. Tie it to get a new one.')
+        alert('You already have a fortune. Tie it or save it to get a new one.')
     } else {
     
         currFortune.innerHTML = ''
